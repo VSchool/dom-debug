@@ -19,7 +19,7 @@ function addSubItem(e){
 }
 
 function createSubItem(e){
-    const subItem = document.createElement("div")
+    const subItem = createElement("div")
     subItem.textContent = document.getElementById("input").value
     const button = document.createElement("button")
     button.textContent = "new sub-item"
@@ -36,7 +36,7 @@ function createSubItem(e){
 }
 
 document.getElementById("theme").addEventListener("click", function(){ 
-    const elements = document.getElementsByClassName("subItem")
+    const elements = document.getElementByClass("subItem")
     for (let i = 0; i < elements.length; i++){
         const level = Number(elements[i].getAttribute("data-level"))
         elements[i].style.backgroundColor = environment.colors[environment.theme][level]

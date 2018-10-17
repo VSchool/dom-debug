@@ -3,3 +3,5 @@ This project is SUPPOSED TO be able to add sub items to any item. Any subItem ma
 It's super broken.
 
 Please clone it down and fix it. 
+
+Sources tab and the console are you friend. 
