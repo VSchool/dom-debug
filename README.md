@@ -1,4 +1,6 @@
-This project is SUPPOSED TO be able to add sub items to any item. Any subItem may also have sub items. 
+This project is SUPPOSED TO be able to add items to the list.
+
+Each item can have it's background changed.
 
 It's super broken.
 

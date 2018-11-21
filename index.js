@@ -1,51 +1,37 @@
-const environment = {
-    theme: "light",
-    colors: {
-        dark: ["indianred", "mediumseagreen", "darkslategray", "slategray", "green", "darkorange", "mediumvioletred"],
-        light: ["aliceblue", "aquamarine", "bisque", "thistle", "peachpuff", "lightcoral", "lemonchiffon"]
-    }
-}
+const colors = ["red", "blue", "green"]
 
-environment.themes = Object.keys(environment.colors)
-
-document.getElementById("add").addEventListener("click", function(e){
+document.getElementById("add").addEventListener("onclick", function(e){
     const subItem = createSubItem(e)
     document.getElementById("list").appendChild(subItem)
 })
 
+function createDropDown(){
+    const dropDown = document.createElement("select")
+    for (let i = 0; i < colors; i++){
+        const option = createElement("option") 
+        option.innerHTML = colors[i]
+        option.value = colors[i]
+        option.style.backgroundColor = colors[i]
+        dropDown.append(option)
+    }
+    dropDown.addEventListener("onchange", function(e){
+        e.target.parent.backgroundColor = e.target.value
+    })
+    return dropDown
+}
+
 function addSubItem(e){
-    const subItem = createSubItem(e)
-    e.target.parentNode.appendChild(subItem)    
+    const subItem = document.createSubItem(e)
+    e.target.parent.append(subItem)    
 }
 
 function createSubItem(e){
-    const subItem = createElement("div")
-    subItem.textContent = document.getElementById("input").value
-    const button = document.createElement("button")
-    button.textContent = "new sub-item"
-    button.addEventListener("click", addSubItem)
-    subItem.appendChild(button)
-    const level = Number(e.target.parentNode.dataset.level) + 1
-    if(level > environment.colors[environment.theme].length){
-        level = 0
-    }
-    subItem.setAttribute("style", "margin-left: 10px; background-color: " + environment.colors[environment.theme][level - 1])
+    const subItem = document.createElement("div")
+    subItem.textContent = document.getElementById("input")
+    const dropDown = createDropDown()
+    subItem.appendChild(dropDown)
     subItem.setAttribute("class", "subItem")
-    subItem.setAttribute("data-level", level)
     return subItem
 }
 
-document.getElementById("theme").addEventListener("click", function(){ 
-    const elements = document.getElementByClass("subItem")
-    for (let i = 0; i < elements.length; i++){
-        const level = Number(elements[i].getAttribute("data-level"))
-        elements[i].style.backgroundColor = environment.colors[environment.theme][level]
-    }
-    const whichThemeIndex = environment.themes.indexOf(environment.theme)
-    if (whichThemeIndex === environment.themes - 1){
-        whichThemeIndex = -1
-    }
-    environment.theme = environment.themes[whichThemeIndex + 1]
-})
-
-    
+   
