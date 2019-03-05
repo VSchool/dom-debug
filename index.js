@@ -1,6 +1,6 @@
 const colors = ["red", "blue", "green"]
 
-document.getElementById("add").addEventListener("click", function(e){
+document.getElementById("add").addEventListener("onclick", function(e){
     const subItem = createSubItem(e)
     document.getElementById("list").appendChild(subItem)
 })
