@@ -20,11 +20,6 @@ function createDropDown(){
     return dropDown
 }
 
-function addSubItem(e){
-    const subItem = document.createSubItem(e)
-    e.target.parent.append(subItem)    
-}
-
 function createSubItem(e){
     const subItem = document.createElement("div")
     subItem.textContent = document.getElementById("input")
@@ -34,4 +29,4 @@ function createSubItem(e){
     return subItem
 }
 
-   
+
