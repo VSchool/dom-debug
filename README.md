@@ -6,4 +6,4 @@ It's super broken.
 
 Please clone it down and fix it. 
 
-Sources tab and the console are you friend. 
+Sources tab and the console are your friend. 
