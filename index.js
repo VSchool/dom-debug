@@ -11,7 +11,6 @@ function createDropDown(){
         const option = createElement("option") 
         option.innerHTML = colors[i]
         option.value = colors[i]
-        option.style.backgroundColor = colors[i]
         dropDown.append(option)
     }
     dropDown.addEventListener("onchange", function(e){
